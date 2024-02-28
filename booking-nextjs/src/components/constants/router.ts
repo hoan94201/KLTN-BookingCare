@@ -1,0 +1,82 @@
+export const pageRouters = {
+    HOME: '/',
+    LOGIN: 'auth/login',
+    PROFILE: '/profile/information',
+    BLOGS: '/profile/blogs',
+    MY_BLOGS: '/profile/blogs/list-blogs',
+    ALL_BLOG: '/blog',
+    DETAIL_BLOG: (id: number) => `/blog/${id}`,
+    MY_DOCTOR: '/doctor-manager',
+    MY_DASHBOAD: '/doctor-manager/dashboad',
+    MY_SCHEDULE: '/doctor-manager/schedule',
+    MY_PATIENT: '/doctor-manager/patient',
+    MY_HISTORY: '/doctor-manager/history',
+
+    CHANGE_PASSWORD: '/profile/change-password',
+    FORGOT_PASSWORD: '/auth/forgot-password',
+    DASHBOARD: '/system',
+    MANAGER_USER: '/system/user',
+    MANAGER_ACCOUNT: '/system/account',
+    MANAGER_DOCTOR: '/system/doctor',
+    EDIT_ACCOUNT: (id: number) => `/system/account/${id}`,
+    MANAGER_SCHEDULE: '/system/schedule',
+    MANAGER_BLOG: '/system/blog',
+    MANAGER_CALENDAR: '/system/calendar',
+    MANAGER_CLINIC: '/system/clinic',
+    MANAGER_SPECIAL: '/system/special',
+    MANAGER_HISTORY: '/system/calendar/patient',
+    DOCTOR: '/doctor',
+    DOCTOR_DETAIL: (id: string) => `/doctor/detail/${id}`,
+    DOCTOR_CLINIC: (id: string) => `/system/clinic/${id}`,
+    SPECIAL: '/special',
+    CLINIC: '/clinic',
+    SPECIAL_DETAIL: (id: number) => `/special/detail/${id}`,
+};
+export const apiRouters = {
+    USER_PROFILE: (id: number) => `/get-user-detail?id=${id}`,
+    USER_LOGIN: '/login',
+    LIST_USERS: (page: number, size: number, type: string, key: string) =>
+        `/get-all-users?page=${page}&size=${size}&type=${type}&q=${key}`,
+    ALL_CODE: (type: string) => `/allcode?type=${type}`,
+
+    CONFIRM_PASSWORD: '/confirm-password',
+    CREATE_USER: '/create-new-user',
+    CREATE_BLOG: '/save-info-blogs',
+
+    CREATE_CLINIC: '/create-new-clinic',
+    CREATE_SPECIAL: '/create-new-specialty',
+    SEND_REMEDY: 'send-remedy',
+    RESET_PASSWORD: '/reset-password',
+
+    DELETE_USER: (id: number) => `/delete-user?id=${id}`,
+    DELETE_CLINIC: (id: number) => `/delete-clinic?id=${id}`,
+    DELETE_SPECIAL: (id: number) => `/delete-specialty?id=${id}`,
+    DETAIL_USER: (id: number) => `/get-user-detail?id=${id}`,
+    DETAIL_BLOG: (id: number) => `/get-blog-detail?id=${id}`,
+    DELETE_BLOG: (id: number) => `/delete-blog?id=${id}`,
+    CONFIRM_BLOG: (id: number, value: number) => `/get-confirm-blog?id=${id}&value=${value}`,
+
+    EDIT_USER: '/edit-user',
+    EDIT_CLINIC: '/edit-clinic',
+    EDIT_SPECIAL: '/edit-specialty',
+
+    LIST_DOCTOR: '/get-all-doctors',
+    LIST_MY_BLOGS: (id: number) => `/get-list-blog?userId=${id}`,
+    LIST_PATIENT: (id: number, date: number, statusId: string) =>
+        `/get-list-patient-for-doctor?doctorId=${id}&date=${date}&statusId=${statusId}`,
+    LIST_HISTORY: (id: number, date: number) => `/get-history-patient-for-doctor?doctorId=${id}&date=${date}`,
+
+    LIST_SPECIAL: '/get-all-specialty-all',
+    LIST_CLINIC: '/get-all-clinic-all',
+    LIST_BLOG: '/get-all-blog',
+    DETAIL_DOCTOR: (id: number | undefined) => `/get-detail-doctor-by-id?id=${id}`,
+
+    DOCTOR_CLINIC: (id: number) => `get-doctor-by-clinic?clinicId=${id}`,
+    SAVE_INFO: '/save-info-doctors',
+    SAVE_SCHEDULE: '/bulk-create-schedule',
+    DETAIL_SCHEDULE_DOCTOR: (doctorId: number, date: number) =>
+        `/get-schedule-doctor-by-date?doctorId=${doctorId}&date=${date}`,
+    BOOKING_REQUEST: '/patient-book-appointment',
+    VERIFY_BOOKING: (token: string) => `/verify-book-appointment?token=${token}`,
+    LIST_DOCTOR_FOR_SPECIAL: (id: number) => `/get-detail-specialty-by-id?id=${id}`,
+};
